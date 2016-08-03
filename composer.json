@@ -14,7 +14,7 @@
         "php": "^7.0",
         "roave/security-advisories": "dev-master",
 	"zendframework/zend-db": "^2.8.1",
-	"zendframework/zend-hydrator": "^1.0"
+	"zendframework/zend-hydrator": "^2.2.1"
     },
     "require-dev": {        
         "zendframework/zend-test": "^3.0.1",
