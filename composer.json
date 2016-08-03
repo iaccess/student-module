@@ -33,7 +33,8 @@
             "StudentTest\\": "test/"
         }
     },
-    "extra": {        
+    "extra": {
+	"installer-name": "Student",
         "zf": {
             "module": "Student",
             "config-provider": "Student\\ConfigProvider"
