@@ -1,0 +1,59 @@
+{
+    "name": "iaccess/student-module",
+    "description": "Vanilla Integration of Managing Student Information",
+    "license": "MIT",
+    "type": "zend-module",
+    "authors": [
+        {
+            "name": "Gab Amba",
+            "email": "gamba@gabbydgab.com",
+            "homepage": "http://www.gabbydgab.com/"
+        }
+    ],
+    "require": {
+        "php": "^7.0",
+        "roave/security-advisories": "dev-master",
+	"zendframework/zend-db": "^2.8.1",
+	"zendframework/zend-hydrator": "^1.0"
+    },
+    "require-dev": {        
+        "zendframework/zend-test": "^3.0.1",
+        "squizlabs/php_codesniffer": "^2.6.2",
+        "phpbench/phpbench": "^0.11.2",
+        "fzaninotto/faker": "^1.6",
+	"sebastian/phpcpd": "^2.0.4"
+    },
+    "autoload": {
+        "psr-4": {
+            "Student\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "StudentTest\\": "test/"
+        }
+    },
+    "extra": {        
+        "zf": {
+            "module": "Student",
+            "config-provider": "Student\\ConfigProvider"
+        }
+    },
+    "scripts": {
+        "post-install-cmd"  : [            
+            "@show-me-the-bugs"
+        ],
+        "post-update-cmd"   : [            
+            "@show-me-the-bugs"
+        ],
+        "show-me-the-bugs": [
+            "@cs",
+            "@cpd",
+	    "@test"
+        ],
+        "cs": "phpcs --ignore=/vendor,/build ",
+        "cs-fix": "phpcbf --ignore=/vendor,/build ",
+	"cpd": "phpcpd --exclude=vendor --fuzzy src",
+        "test": "phpunit --verbose"
+    }
+}
