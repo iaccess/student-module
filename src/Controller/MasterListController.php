@@ -26,40 +26,37 @@
 
 namespace Student\Controller;
 
-use Student\Service\Catalog\MasterListService;
+use Academiae\Student\Repository\Masterlist\RepositoryInterface;
 use Zend\Mvc\Controller\AbstractActionController;
 use Zend\View\Model\ViewModel;
 
 class MasterListController extends AbstractActionController
 {
     /**
-     * @var MasterListService
+     * @var Academiae\Student\Repository\Masterlist\RepositoryInterface
      */
-    private $masterlist;
+    private $repository;
 
-    public function __construct(MasterListService $masterlist)
+    public function __construct(RepositoryInterface $repository)
     {
-        $this->masterlist = $masterlist;
+        $this->repository = $repository;
     }
 
     public function indexAction()
     {
-        $all            = $this->masterlist->listAll();
-        $scholars       = $this->masterlist->withScholarship();
-        $undergraduates = $this->masterlist->undergraduates();
-        $graduates      = $this->masterlist->graduates();
+        $all            = $this->repository->fetchAll();
 
         $data = [
             'counter'   => [
                 'overall'           => $this->countTotal($all),
-                'scholars'          => $this->countTotal($scholars),
-                'undergraduates'    => $this->countTotal($undergraduates),
-                'graduates'         => $this->countTotal($graduates),
+//                'scholars'          => $this->countTotal($scholars),
+//                'undergraduates'    => $this->countTotal($undergraduates),
+//                'graduates'         => $this->countTotal($graduates),
             ],
             'students'          => $all,
-            'scholars'          => $scholars,
-            'undergraduates'    => $undergraduates,
-            'graduates'    => $graduates,
+//            'scholars'          => $scholars,
+//            'undergraduates'    => $undergraduates,
+//            'graduates'    => $graduates,
         ];
 
         return new ViewModel($data);

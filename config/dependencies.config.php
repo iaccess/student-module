@@ -7,16 +7,8 @@
  */
 
 
-use Student\Repository\Catalog\StudentListRepositoryInterface;
-use Student\Factory\Repository\StudentListRepositoryFactory;
-use Student\Factory\Service\MasterListServiceFactory;
-use Student\Service\Catalog\MasterListService;
-
 return [
-    'factories'             => [
-        StudentListRepositoryInterface::class   => StudentListRepositoryFactory::class,
-        MasterListService::class                => MasterListServiceFactory::class,
-    ],
+    'factories'             => [],
     'services'              => [],
     'abstract_factories'    => [],
     'delegators'            => [],

@@ -29,7 +29,7 @@ namespace Student\Factory\Controller;
 use Zend\ServiceManager\Factory\FactoryInterface;
 use Interop\Container\ContainerInterface;
 use Student\Controller\MasterListController;
-use Student\Service\Catalog\MasterListService;
+use Academiae\Student\Repository\Masterlist\RepositoryInterface;
 
 class MasterListControllerFactory implements FactoryInterface
 {
@@ -40,7 +40,7 @@ class MasterListControllerFactory implements FactoryInterface
      */
     public function __invoke(ContainerInterface $container, $requestedName, array $options = null)
     {
-        $service = $container->get(MasterListService::class);
+        $service = $container->get(RepositoryInterface::class);
         return new MasterListController($service);
     }
 }
