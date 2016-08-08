@@ -12,16 +12,14 @@
     ],
     "require": {
         "php": "^7.0",
-        "roave/security-advisories": "dev-master",
-	"zendframework/zend-db": "^2.8.1",
-	"zendframework/zend-hydrator": "^2.2.1"
+        "academiae/student-service-repository": "^1.0 || ~0.1"
     },
-    "require-dev": {        
+    "require-dev": {
         "zendframework/zend-test": "^3.0.1",
         "squizlabs/php_codesniffer": "^2.6.2",
         "phpbench/phpbench": "^0.11.2",
         "fzaninotto/faker": "^1.6",
-	"sebastian/phpcpd": "^2.0.4"
+        "sebastian/phpcpd": "^2.0.4"
     },
     "autoload": {
         "psr-4": {
@@ -34,7 +32,7 @@
         }
     },
     "extra": {
-	"installer-name": "Student",
+        "installer-name": "Student",
         "zf": {
             "module": "Student",
             "config-provider": "Student\\ConfigProvider"
@@ -44,17 +42,17 @@
         "post-install-cmd"  : [            
             "@show-me-the-bugs"
         ],
-        "post-update-cmd"   : [            
+        "post-update-cmd"   : [
             "@show-me-the-bugs"
         ],
         "show-me-the-bugs": [
             "@cs",
             "@cpd",
-	    "@test"
+            "@test"
         ],
         "cs": "phpcs --ignore=/vendor,/build ",
         "cs-fix": "phpcbf --ignore=/vendor,/build ",
-	"cpd": "phpcpd --exclude=vendor --fuzzy src",
+        "cpd": "phpcpd --exclude=vendor --fuzzy src",
         "test": "phpunit --verbose"
     }
 }
