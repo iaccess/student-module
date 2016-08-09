@@ -33,7 +33,7 @@ use Student\Controller\AdmissionController;
 final class AdmissionControllerFactory implements FactoryInterface
 {
     /**
-     * 
+     *
      * @param ContainerInterface $container
      * @param string $requestedName
      * @param array $options
