@@ -30,7 +30,7 @@ return [
                     'route'     => '/admission',
                     'defaults'  => [
                         'controller'    => Controller\AdmissionController::class,
-                        'action'    => 'history'
+                        'action'    => 'index'
                     ]
                 ]
             ],
