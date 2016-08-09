@@ -5,14 +5,14 @@
  *
  * Most of the routing definitions will be done in module configuration files.
  *
- * @see https://zendframework.github.io/zend-router/routing/
+ * @see https://docs.zendframework.com/zend-router/routing/
  *
  */
 
 use Zend\Router\Http\Literal;
 use Student\Controller;
 
-return [
+return [    
     'student' => [
         'type'          => Literal::class,
         'options'       => [
@@ -24,6 +24,16 @@ return [
         ],
         'may_terminate' => true,
         'child_routes'  => [
+            'admission' => [
+                'type'      => Literal::class,
+                'options'   => [
+                    'route'     => '/admission',
+                    'defaults'  => [
+                        'controller'    => Controller\AdmissionController::class,
+                        'action'    => 'history'
+                    ]
+                ]
+            ],
             'history'   => [
                 'type'      => Literal::class,
                 'options'   => [

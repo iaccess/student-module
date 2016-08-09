@@ -26,7 +26,13 @@
 
 namespace Student\Controller;
 
-class AdmissionController
-{
+use Zend\Mvc\Controller\AbstractActionController;
+use Zend\View\Model\ViewModel;
 
+class AdmissionController extends AbstractActionController
+{
+    public function indexAction()
+    {
+        return new ViewModel();
+    }
 }
