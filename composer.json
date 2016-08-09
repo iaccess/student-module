@@ -35,8 +35,10 @@
     "extra": {
         "installer-name": "Student",
         "zf": {
-            "module": "Student",
-            "config-provider": "Student\\ConfigProvider"
+            "module": [
+                "Academiae\\Student",
+                "Student"
+            ]
         }
     },
     "scripts": {
