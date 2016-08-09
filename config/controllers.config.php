@@ -11,6 +11,7 @@ use Student\Factory;
 
 return [
     'factories' => [
-        Controller\MasterListController::class   => Factory\Controller\MasterListControllerFactory::class,
+        Controller\MasterListController::class  => Factory\Controller\MasterListControllerFactory::class,
+        Controller\AdmissionController::class   => Factory\Controller\AdmissionControllerFactory::class,
     ]
 ];
