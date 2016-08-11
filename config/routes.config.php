@@ -12,7 +12,7 @@
 use Zend\Router\Http\Literal;
 use Student\Controller;
 
-return [    
+return [
     'student' => [
         'type'          => Literal::class,
         'options'       => [
